@@ -105,7 +105,7 @@ const Contact = () => {
         >
           <div className="flex items-center gap-2 cursor-pointer text-[#E1E1E1] hover:text-[#D5491D]  ">
             <Mail size={18} className="" />
-            <p className=" text-start  font-bold ">haifa.khiari@outlook.com</p>
+            <p className=" text-start  font-bold ">haifa.khiari@outlook.fr</p>
           </div>
           <div className="flex items-center gap-2 cursor-pointer text-[#E1E1E1] hover:text-[#D5491D]   ">
             <Phone size={18} />
