@@ -81,7 +81,7 @@ const Experience = () => {
           transition={{ ease: "easeInOut", duration: 0.5 }}
           className=" text-[#E1E1E1]"
         >
-          As a frontend developer with 1 year of experience, I have a strong
+          As a frontend developer with 2 years of experience, I have a strong
           foundation in creating dynamic and responsive web applications. <br />{" "}
           My experience with React.js has enabled me to develop fast, scalable,
           and dynamic web pages with excellent user experiences. <br />{" "}

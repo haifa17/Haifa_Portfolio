@@ -40,9 +40,9 @@ const Hero = () => {
         animate={inView1 ? "visible" : "hidden"}
         variants={variants}
         transition={{ ease: "easeInOut", duration: 0.5 }}
-        src="/haifa.png"
+        src="/haifa.jpg"
         alt=""
-        className="rounded-full w-40 "
+        className="rounded-md w-40 "
       />
       <div className="flex flex-col font-extrabold   ">
         <motion.p
@@ -102,7 +102,7 @@ const Hero = () => {
           </button>
         </a>
 
-        <a href="/file/Haifa_Khiari.pdf" download>
+        <a href="/file/Haifa_Khiari_frontend_developer.pdf" download>
           <button className="rounded-full px-4 py-3 border border-white hover:bg-gradient-to-r from-[#9A33FF] to-[#FF8660]  hover:font-semibold">
             Download CV
           </button>
