@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import Card from "../cards/page";
+import Card from "../../components/cards/page";
 
 const Projects = () => {
   const [ref1, inView1] = useInView({

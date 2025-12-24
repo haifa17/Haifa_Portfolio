@@ -3,7 +3,7 @@ import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { SkillBadge } from "@/components/navbar/badge/SkillBadge";
+import { Badge } from "@/components/badge/Badge";
 import { fadeInVariants } from "./variants";
 import { SKILL_CATEGORIES, TECH_ICONS } from "./constants";
 
@@ -39,7 +39,7 @@ const SkillCategory = ({
   });
 
   return (
-    <div className="flex flex-col lg:flex-row text-white items-center gap-5 w-full">
+    <div className="flex flex-col  text-white items-center gap-5 w-full">
       <motion.p
         ref={titleRef}
         initial="hidden"
@@ -58,7 +58,7 @@ const SkillCategory = ({
         className={`grid ${gridCols} grid-cols-2 items-center gap-4 w-full`}
       >
         {skills.map((skill, idx) => (
-          <SkillBadge key={skill} skill={skill} index={idx} />
+          <Badge key={skill} skill={skill} index={idx} />
         ))}
       </motion.div>
     </div>
