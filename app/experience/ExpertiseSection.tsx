@@ -47,7 +47,7 @@ export const ExpertiseSection = () => {
               initial="hidden"
               animate={inView ? "visible" : "hidden"}
               variants={staggerContainer}
-              className="grid grid-cols-4 gap-3 lg:gap-4"
+              className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4"
             >
               {area.items.map((item, itemIdx) => (
                 <Badge key={item} skill={item} index={itemIdx} />

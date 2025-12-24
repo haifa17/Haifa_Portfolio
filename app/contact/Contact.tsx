@@ -1,123 +1,145 @@
 "use client";
-import { Linkedin, Mail, Phone } from "lucide-react";
-import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { fadeInVariants, slideInLeft, staggerContainer } from "./variants";
+import { CONTACT_INFO } from "./constants";
+import { ContactItem } from "./ContactItem";
 
 const Contact = () => {
-  const [ref1, inView1] = useInView({
-    triggerOnce: true, 
-    threshold: 0.5,
+  const [formData, setFormData] = useState({
+    subject: "",
+    message: "",
   });
-  const [ref2, inView2] = useInView({
+
+  const [titleRef, titleInView] = useInView({
     triggerOnce: true,
     threshold: 0.5,
   });
 
-  const [ref3, inView3] = useInView({
-    triggerOnce: true,
-    threshold: 0.5,
-  });
-  const [ref4, inView4] = useInView({
+  const [descRef, descInView] = useInView({
     triggerOnce: true,
     threshold: 0.5,
   });
 
-  const variants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0 },
+  const [formRef, formInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.3,
+  });
+
+  const [contactRef, contactInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.3,
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
   };
-  const variants2 = {
-    hidden: { opacity: 0, x: -100 },
-    visible: { opacity: 1, x: 0 },
-  };
-  const variants3 = {
-    hidden: { opacity: 0, x: 100 },
-    visible: { opacity: 1, x: 0 },
-  };
+
   return (
     <div
       id="contact"
-      className="flex flex-col text-white gap-10 lg:gap-20 py-5 px-10 lg:px-20 overflow-hidden  bg-[#222222]"
+      className="flex flex-col text-white gap-10 lg:gap-20 py-12 px-6 lg:px-20 bg-[#222222]"
     >
-      <motion.p
-        ref={ref1}
+      {/* Title */}
+      <motion.h2
+        ref={titleRef}
         initial="hidden"
-        animate={inView1 ? "visible" : "hidden"}
-        variants={variants}
+        animate={titleInView ? "visible" : "hidden"}
+        variants={fadeInVariants}
         transition={{ ease: "easeInOut", duration: 0.5 }}
-        className="font-extrabold text-4xl uppercase bg-gradient-to-r from-[#FF8660] to-[#D5491D] inline-block text-transparent bg-clip-text text-center"
+        className="font-extrabold text-4xl lg:text-5xl uppercase bg-gradient-to-r from-[#FF8660] to-[#D5491D] text-transparent bg-clip-text text-center"
       >
-        Contact
-      </motion.p>
+        Get In Touch
+      </motion.h2>
+
+      {/* Description */}
       <motion.p
-        ref={ref2}
+        ref={descRef}
         initial="hidden"
-        animate={inView2 ? "visible" : "hidden"}
-        variants={variants}
+        animate={descInView ? "visible" : "hidden"}
+        variants={fadeInVariants}
         transition={{ ease: "easeInOut", duration: 0.5 }}
-        className="text-[#E1E1E1] text-center "
+        className="text-[#E1E1E1] text-center text-lg max-w-3xl mx-auto leading-relaxed"
       >
-        Junior Software Engineer with 1 year of hands-on experience in designing
-        and implementing robust, scalable, and innovative web solutions. <br />{" "}
-        Adept at leveraging a comprehensive skill set encompassing front-end
-        technologies . Excited for new opportunities and eager to improve my
-        skills.
+        Frontend Developer with 2+ years of experience building
+        production-ready, high-performance web applications. I'm always excited
+        to discuss new opportunities, collaborate on interesting projects, or
+        just connect with fellow developers.
       </motion.p>
-      <div className="flex flex-col gap-8 lg:flex-row lg:justify-between  lg:px-40 ">
-        <form>
-          <motion.div
-            ref={ref3}
-            initial="hidden"
-            animate={inView3 ? "visible" : "hidden"}
-            variants={variants2}
-            transition={{ ease: "easeInOut", duration: 0.5 }}
-            className="flex flex-col gap-6"
-          >
-            <div className="flex flex-col gap-2">
-              <p>Subject</p>
-              <input
-                placeholder="let's talk"
-                type="text"
-                className="rounded-md bg-transparent border py-2 lg:w-[500px] text-white placeholder:px-4  "
-              />
-            </div>
-            <div className="flex flex-col gap-2">
-              <p>Description</p>
-              <input
-                type="text"
-                className="rounded-md bg-transparent border  lg:w-[500px] h-[200px] text-white "
-              />
-            </div>
-            <button className="bg-gradient-to-r from-[#FF8660] to-[#D5491D] py-2 rounded-md  ">
-              Submit
-            </button>
-          </motion.div>
-        </form>
-        <motion.div
-          ref={ref4}
+
+      {/* Form and Contact Info */}
+      <div className="flex flex-col gap-12 lg:flex-row lg:gap-16 justify-center items-start max-w-6xl mx-auto w-full">
+        {/* Contact Form */}
+        <motion.form
+          ref={formRef}
           initial="hidden"
-          animate={inView4 ? "visible" : "hidden"}
-          variants={variants3}
+          animate={formInView ? "visible" : "hidden"}
+          variants={slideInLeft}
           transition={{ ease: "easeInOut", duration: 0.5 }}
-          className="flex flex-col  gap-3 "
+          action="https://formspree.io/f/meejwlzd"
+          method="POST"
+          className="flex flex-col gap-6 w-full lg:w-1/2"
         >
-          <div className="flex items-center gap-2 cursor-pointer text-[#E1E1E1] hover:text-[#D5491D]  ">
-            <Mail size={18} className="" />
-            <p className=" text-start  font-bold ">haifa.khiari@outlook.fr</p>
+          <div className="flex flex-col gap-2">
+            <label htmlFor="subject" className="font-semibold text-white">
+              Subject
+            </label>
+            <input
+              id="subject"
+              name="subject"
+              type="text"
+              value={formData.subject}
+              onChange={handleChange}
+              placeholder="Let's discuss..."
+              required
+              className="rounded-lg bg-transparent border border-[#FF8660]/30 py-3 px-4 text-white placeholder:text-[#E1E1E1]/40 focus:border-[#FF8660] focus:outline-none transition-colors duration-300"
+            />
           </div>
-          <div className="flex items-center gap-2 cursor-pointer text-[#E1E1E1] hover:text-[#D5491D]   ">
-            <Phone size={18} />
-            <p className=" text-start font-bold">+216 55182078</p>
+
+          <div className="flex flex-col gap-2">
+            <label htmlFor="message" className="font-semibold text-white">
+              Message
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              placeholder="Tell me about your project or idea..."
+              required
+              rows={6}
+              className="rounded-lg bg-transparent border border-[#FF8660]/30 py-3 px-4 text-white placeholder:text-[#E1E1E1]/40 focus:border-[#FF8660] focus:outline-none transition-colors duration-300 resize-none"
+            />
           </div>
-          <Link
-            href="https://www.linkedin.com/in/haifa-khiari-18a874177/"
-            className="flex items-center gap-2 cursor-pointer text-[#E1E1E1] hover:text-[#D5491D]   "
+
+          <button
+            type="submit"
+            className="bg-gradient-to-r from-[#FF8660] to-[#D5491D] py-3 px-6 rounded-lg font-semibold hover:shadow-lg hover:shadow-[#FF8660]/50 transition-all duration-300 hover:scale-105"
           >
-            <Linkedin size={18} className="" />
-            <p className=" text-start  font-bold underline  ">Haifa Khiari </p>
-          </Link>
+            Send Message
+          </button>
+        </motion.form>
+
+        {/* Contact Information */}
+        <motion.div
+          ref={contactRef}
+          initial="hidden"
+          animate={contactInView ? "visible" : "hidden"}
+          variants={staggerContainer}
+          className="flex flex-col gap-4 w-full lg:w-1/2"
+        >
+          <h3 className="font-bold text-xl mb-2 text-white">
+            Contact Information
+          </h3>
+          {CONTACT_INFO.map((item, index) => (
+            <ContactItem key={item.label} item={item} index={index} />
+          ))}
         </motion.div>
       </div>
     </div>
