@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
-import Contact from "@/components/contact/Contact";
+import Contact from "@/app/contact/Contact";
 
 export const metadata: Metadata = {
   title: "Khiari Haifa",
