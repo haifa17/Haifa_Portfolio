@@ -104,7 +104,6 @@ const Skills = () => {
       id="skills"
       className="flex flex-col text-white gap-10 lg:gap-20 py-8 items-center justify-center"
     >
-      {/* Title */}
       <motion.h2
         ref={titleRef}
         initial="hidden"
@@ -115,8 +114,6 @@ const Skills = () => {
       >
         SKILLS
       </motion.h2>
-
-      {/* Tech Icons */}
       <motion.div
         ref={iconsRef}
         initial="hidden"
@@ -129,7 +126,6 @@ const Skills = () => {
         ))}
       </motion.div>
 
-      {/* Skill Categories */}
       <div className="flex flex-col gap-8 w-full max-w-6xl px-4">
         {SKILL_CATEGORIES.map((category, index) => (
           <SkillCategory

@@ -1,124 +1,170 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { Download, Mail } from "lucide-react";
+import { SOCIAL_LINKS } from "./constants";
+import { fadeInVariants, scaleInVariants } from "./variants";
 
 const Hero = () => {
-  const variants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0 },
-  };
+  const [imageRef, imageInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.3,
+  });
 
-  // Each animated element data
-  const elements = [
-    {
-      type: "p",
-      text: "I'm Haifa Khiari",
-      className: "lg:text-4xl font-extrabold",
-    },
-    {
-      type: "p",
-      text: (
-        <>
-          A{" "}
-          <span className="bg-gradient-to-r from-[#9A33FF] to-[#FF8660] inline-block text-transparent bg-clip-text">
-            Front-end
-          </span>{" "}
-          Developer
-        </>
-      ),
-      className: "text-2xl lg:text-5xl font-extrabold",
-    },
-    {
-      type: "p",
-      text: (
-        <>
-          Passionate Software Engineer with a focus on{" "}
-          <span className="font-extrabold text-lg bg-gradient-to-r from-[#5BADFF] to-[#1373D1] inline-block text-transparent bg-clip-text">
-            ReactJs & NextJs
-          </span>{" "}
-          development, dedicated to crafting elegant and user-friendly web
-          applications.
-        </>
-      ),
-      className: "text-base",
-    },
-  ];
+  const [contentRef, contentInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.3,
+  });
 
   return (
     <div
       id="home"
-      className="grid grid-cols-1 lg:grid-cols-2 gap-10 py-8 items-center text-white text-center lg:text-left"
+      className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16  px-6 lg:px-20 items-center text-white min-h-[calc(100vh-80px)]"
     >
-      {/* Left: Image */}
-      <motion.img
-        src="/haifa.jpg"
-        alt="Haifa Khiari"
-        className="rounded-md w-60 mx-auto lg:mx-0"
-        ref={useInView({ triggerOnce: true, threshold: 0.5 })[0]}
+      <motion.div
+        ref={imageRef}
         initial="hidden"
-        animate={
-          useInView({ triggerOnce: true, threshold: 0.5 })[1]
-            ? "visible"
-            : "visible"
-        }
-        variants={variants}
-        transition={{ ease: "easeInOut", duration: 0.5 }}
-      />
+        animate={imageInView ? "visible" : "hidden"}
+        variants={scaleInVariants}
+        transition={{ ease: "easeInOut", duration: 0.7 }}
+        className="relative flex items-center justify-center"
+      >
+        <div className="relative w-full max-w-[25rem] aspect-[3/4]">
+          <div className="absolute inset-0 bg-gradient-to-br from-[#9A33FF]/20 to-[#FF8660]/20 rounded-3xl blur-2xl" />
+          <div className="relative w-full h-full rounded-3xl overflow-hidden border-2 border-[#9A33FF]/40 shadow-2xl shadow-[#9A33FF]/10">
+            <Image
+              src="/haifa.jpg"
+              alt="Haifa Khiari - Frontend Developer"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.5 }}
+            className="absolute -bottom-4 left-[30%] transform translate-x-1/2 bg-gradient-to-r from-[#9A33FF] to-[#FF8660] px-6 py-3 rounded-full shadow-lg"
+          >
+            <p className="text-white font-bold text-sm lg:text-base whitespace-nowrap">
+              2+ Years Experience
+            </p>
+          </motion.div>
+        </div>
+      </motion.div>
 
-      {/* Right: Text + Buttons */}
-      <div className="flex flex-col gap-6">
-        {elements.map((el, i) => {
-          const [ref, inView] = useInView({
-            triggerOnce: true,
-            threshold: 0.5,
-          });
-          const transition = {
-            ease: "easeInOut",
-            duration: 0.5,
-            delay: i * 0.25,
-          };
-
-          return (
-            <motion.div
-              key={i}
-              ref={ref}
-              initial="hidden"
-              animate={inView ? "visible" : "hidden"}
-              variants={variants}
-              transition={transition}
-            >
-              <p className={el.className}>{el.text}</p>
-            </motion.div>
-          );
-        })}
-
-        {/* Buttons */}
+      <motion.div
+        ref={contentRef}
+        initial="hidden"
+        animate={contentInView ? "visible" : "hidden"}
+        className="flex flex-col gap-6 text-center lg:text-left"
+      >
         <motion.div
-          ref={useInView({ triggerOnce: true, threshold: 0.5 })[0]}
-          initial="hidden"
-          animate={
-            useInView({ triggerOnce: true, threshold: 0.5 })[1]
-              ? "visible"
-              : "visible"
-          }
-          variants={variants}
-          transition={{ ease: "easeInOut", duration: 1 }}
-          className="flex flex-col sm:flex-row gap-4 mt-4"
+          variants={fadeInVariants}
+          transition={{ ease: "easeInOut", duration: 0.5, delay: 0.1 }}
         >
-          <a href="#contact">
-            <button className="rounded-full px-4 py-3 bg-white text-black font-semibold hover:border hover:border-white hover:bg-gradient-to-r from-[#9A33FF] to-[#FF8660] hover:inline-block hover:text-transparent hover:bg-clip-text">
+          <p className="text-lg lg:text-xl text-[#E1E1E1] font-medium mb-2">
+            Hi there! 👋
+          </p>
+          <h1 className="text-3xl lg:text-5xl font-extrabold">
+            I'm{" "}
+            <span className="bg-gradient-to-r from-[#9A33FF] to-[#FF8660] text-transparent bg-clip-text">
+              Haifa Khiari
+            </span>
+          </h1>
+        </motion.div>
+        <motion.h2
+          variants={fadeInVariants}
+          transition={{ ease: "easeInOut", duration: 0.5, delay: 0.2 }}
+          className="text-2xl lg:text-4xl font-bold"
+        >
+          Frontend Developer
+          <br />
+          <span className="text-xl lg:text-3xl bg-gradient-to-r from-[#5BADFF] to-[#1373D1] text-transparent bg-clip-text">
+            React.js & Next.js Specialist
+          </span>
+        </motion.h2>
+        <motion.p
+          variants={fadeInVariants}
+          transition={{ ease: "easeInOut", duration: 0.5, delay: 0.3 }}
+          className="text-base lg:text-lg text-[#E1E1E1] leading-relaxed"
+        >
+          I specialize in building{" "}
+          <span className="font-semibold text-white">high-performance</span>,{" "}
+          <span className="font-semibold text-white">
+            scalable web applications
+          </span>{" "}
+          with a focus on exceptional user experiences. From e-commerce
+          platforms to interactive dashboards, I bring ideas to life with clean
+          code and modern technologies.
+        </motion.p>
+
+        <motion.div
+          variants={fadeInVariants}
+          transition={{ ease: "easeInOut", duration: 0.5, delay: 0.4 }}
+          className="flex flex-wrap gap-3 text-white justify-center lg:justify-start"
+        >
+          {["React.js", "Next.js", "TypeScript", "Tailwind CSS"].map(
+            (skill, index) => (
+              <span
+                key={skill}
+                className="px-4 py-2 rounded-full bg-gradient-to-r from-[#9A33FF]/20 to-[#FF8660]/20 border border-[#9A33FF]/40 text-sm font-medium"
+              >
+                {skill}
+              </span>
+            )
+          )}
+        </motion.div>
+
+        <motion.div
+          variants={fadeInVariants}
+          transition={{ ease: "easeInOut", duration: 0.5, delay: 0.5 }}
+          className="flex flex-col sm:flex-row gap-4 "
+        >
+          <a href="#contact" className="w-full sm:w-auto">
+            <button className="w-full sm:w-auto rounded-full px-6 py-3 bg-gradient-to-r from-[#9A33FF] to-[#FF8660] text-white font-semibold hover:shadow-lg hover:shadow-[#9A33FF]/50 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2">
+              <Mail size={18} />
               Get In Touch
             </button>
           </a>
 
-          <a href="/file/Haifa_Khiari_frontend_developer.pdf" download>
-            <button className="rounded-full px-4 py-3 border border-white hover:bg-gradient-to-r from-[#9A33FF] to-[#FF8660] hover:font-semibold">
+          <a
+            href="/file/Haifa_Khiari_frontend_developer.pdf"
+            download
+            className="w-full sm:w-auto"
+          >
+            <button className="w-full sm:w-auto rounded-full px-6 py-3 border-2 border-[#9A33FF] text-white font-semibold hover:bg-gradient-to-r hover:from-[#9A33FF] hover:to-[#FF8660] hover:border-transparent transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2">
+              <Download size={18} />
               Download CV
             </button>
           </a>
         </motion.div>
-      </div>
+
+        <motion.div
+          variants={fadeInVariants}
+          transition={{ ease: "easeInOut", duration: 0.5, delay: 0.6 }}
+          className="flex gap-4 justify-center lg:justify-start "
+        >
+          {SOCIAL_LINKS.map((social) => {
+            const Icon = social.icon;
+            return (
+              <a
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                // Protected against security risks
+                rel="noopener noreferrer"
+                aria-label={social.label}
+                className="p-3 rounded-full border border-[#9A33FF]/40 hover:bg-gradient-to-r hover:from-[#9A33FF] hover:to-[#FF8660] hover:border-transparent transition-all duration-300 hover:scale-110"
+              >
+                <Icon size={20} />
+              </a>
+            );
+          })}
+        </motion.div>
+      </motion.div>
     </div>
   );
 };
