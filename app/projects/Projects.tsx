@@ -7,8 +7,8 @@ import { fadeInVariants, pulseVariants } from "@/lib/variants";
 import { COMING_SOON_PROJECTS } from "./constants";
 import StatusBadge from "@/components/badge/StatusBadge";
 import PreviewCard from "@/components/cards/PreviewCard";
-import PrimaryButton from "@/components/buttons/PrimaryButton";
 import SecondaryButton from "@/components/buttons/SecondaryButton";
+import MainButton from "@/components/buttons/MainButton";
 
 const Projects = () => {
   const [titleRef, titleInView] = useInView({
@@ -51,8 +51,8 @@ const Projects = () => {
           animate="animate"
           className="relative"
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-[#9A33FF] to-[#FF8660] rounded-full blur-2xl opacity-30" />
-          <div className="relative bg-gradient-to-r from-[#9A33FF] to-[#FF8660] p-8 rounded-full">
+          <div className="absolute inset-0 gradient-primary rounded-full blur-2xl opacity-30" />
+          <div className="relative gradient-primary p-8 rounded-full">
             <Wrench size={64} className="text-white" strokeWidth={2} />
           </div>
         </motion.div>
@@ -90,11 +90,11 @@ const Projects = () => {
           In the meantime, feel free to check out my GitHub or get in touch!
         </p>
         <div className="flex gap-4">
-          <PrimaryButton
+          <SecondaryButton
             href="https://github.com/haifa17"
             title="View GitHub"
           />
-          <SecondaryButton href="#contact" title="Contact Me" />
+          <MainButton href="#contact" title="Contact Me" />
         </div>
       </motion.div>
     </div>

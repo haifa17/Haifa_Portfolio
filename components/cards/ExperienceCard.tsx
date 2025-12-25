@@ -47,7 +47,7 @@ export const ExperienceCard = ({
           transition={{ ease: "easeInOut", duration: 0.5 }}
         >
           <h3 className="font-bold text-xl lg:text-2xl">
-            <span className="bg-gradient-to-r from-[#9A33FF] to-[#FF8660] text-transparent bg-clip-text">
+            <span className="gradient-primary text-transparent bg-clip-text">
               {experience.company}
             </span>
             <span className="text-white"> / {experience.role}</span>

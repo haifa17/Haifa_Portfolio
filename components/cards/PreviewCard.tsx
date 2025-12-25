@@ -36,7 +36,7 @@ const PreviewCard = ({ projects }: { projects: Project }) => {
             {/* Card */}
             <div className="h-full bg-gradient-to-br from-[#9A33FF]/5 to-[#FF8660]/5 border border-[#9A33FF]/30 rounded-xl p-6 hover:border-[#9A33FF]/60 transition-all duration-300 flex flex-col gap-4">
               {/* Icon */}
-              <div className="w-12 h-12 bg-gradient-to-r from-[#9A33FF] to-[#FF8660] rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <div className="w-12 h-12 gradient-primary rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 <Icon size={24} className="text-white" />
               </div>
 
@@ -67,7 +67,7 @@ const PreviewCard = ({ projects }: { projects: Project }) => {
                       inView ? { width: `${project.progress}%` } : { width: 0 }
                     }
                     transition={{ duration: 1, delay: 0.5 + index * 0.1 }}
-                    className="h-full bg-gradient-to-r from-[#9A33FF] to-[#FF8660] rounded-full"
+                    className="h-full gradient-primary rounded-full"
                   />
                 </div>
 

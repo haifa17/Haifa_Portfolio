@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .gradient-color {
+    @apply bg-gradient-to-r from-[#9A33FF] to-[#FF8660];
+  }
+  .gradient-primary {
+    @apply gradient-color text-white font-semibold hover:shadow-lg hover:shadow-[#9A33FF]/50;
+  }
+}

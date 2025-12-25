@@ -25,7 +25,7 @@ const Experience = () => {
         animate={titleInView ? "visible" : "hidden"}
         variants={fadeInVariants}
         transition={{ ease: "easeInOut", duration: 0.5 }}
-        className="font-extrabold text-4xl lg:text-5xl uppercase bg-gradient-to-r from-[#9A33FF] to-[#FF8660] text-transparent bg-clip-text"
+        className="font-extrabold text-4xl lg:text-5xl uppercase gradient-color text-transparent bg-clip-text"
       >
         Experience
       </motion.h2>

@@ -8,8 +8,8 @@ import { SOCIAL_LINKS } from "./constants";
 import { fadeInVariants, scaleInVariants } from "@/lib/variants";
 import StatusBadge from "@/components/badge/StatusBadge";
 import Link from "next/link";
-import PrimaryButton from "@/components/buttons/PrimaryButton";
 import SecondaryButton from "@/components/buttons/SecondaryButton";
+import MainButton from "@/components/buttons/MainButton";
 
 const Hero = () => {
   const [imageRef, imageInView] = useInView({
@@ -50,7 +50,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.5 }}
-            className="absolute -bottom-4 left-[30%] transform translate-x-1/2 bg-gradient-to-r from-[#9A33FF] to-[#FF8660] px-6 py-3 rounded-full shadow-lg"
+            className="absolute -bottom-4 left-[30%] transform translate-x-1/2 gradient-primary px-6 py-3 rounded-full shadow-lg"
           >
             <p className="text-white font-bold text-sm lg:text-base whitespace-nowrap">
               2+ Years Experience
@@ -74,7 +74,7 @@ const Hero = () => {
           </p>
           <h1 className="text-3xl lg:text-5xl font-extrabold">
             I'm{" "}
-            <span className="bg-gradient-to-r from-[#9A33FF] to-[#FF8660] text-transparent bg-clip-text">
+            <span className="gradient-color text-transparent bg-clip-text">
               Haifa Khiari
             </span>
           </h1>
@@ -122,7 +122,7 @@ const Hero = () => {
           transition={{ ease: "easeInOut", duration: 0.5, delay: 0.5 }}
           className="flex flex-col sm:flex-row gap-4 "
         >
-          <SecondaryButton
+          <MainButton
             href="#contact"
             title={
               <>
@@ -131,7 +131,7 @@ const Hero = () => {
               </>
             }
           />
-          <PrimaryButton
+          <SecondaryButton
             download
             href="/file/Haifa_Khiari_frontend_developer.pdf"
             title={
