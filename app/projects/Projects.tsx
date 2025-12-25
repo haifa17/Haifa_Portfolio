@@ -2,86 +2,101 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import Card from "../../components/cards/page";
+import { Wrench, Clock } from "lucide-react";
+import { fadeInVariants, pulseVariants } from "@/lib/variants";
+import { COMING_SOON_PROJECTS } from "./constants";
+import StatusBadge from "@/components/badge/StatusBadge";
+import PreviewCard from "@/components/cards/PreviewCard";
+import PrimaryButton from "@/components/buttons/PrimaryButton";
+import SecondaryButton from "@/components/buttons/SecondaryButton";
 
 const Projects = () => {
-  const [ref1, inView1] = useInView({
+  const [titleRef, titleInView] = useInView({
     triggerOnce: true,
     threshold: 0.5,
   });
 
-  const variants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0 },
-  };
-
-  const cards1 = [
-    {
-      video1: "/projects/scrren15.mp4",
-      title: "Bello Poultry Market",
-      description:
-        "Developed a versatile web application using Next.js to manage customers, simplifying customer interactions and data management. The platform includes multilingual support with strong translation features, allowing easy communication with a diverse customer base. Administrators can manage profiles, track interactions, and analyze data effectively, providing personalized service in different languages.",
-    },
-    {
-      video1: "/projects/screen18.mp4",
-      title: "Future Poultry Market",
-      description:
-        "Built a robust e-commerce web application with Next.js, featuring an intuitive dashboard for managing products, categories, users, and other essential elements of the platform. The application offers full control over all functionalities and includes a versatile store interface tailored for administrators.",
-    },
-  ];
-  const cards2 = [
-    {
-      video1: "/projects/scrren13.mp4",
-      title: "XpresFood Dashboard",
-      description:
-        "Created an admin dashboard using Next.js framework ,for managing products, categories, users and orders, providing comprehensive control over the platform's functionalities.  Designed a customer dashboard to enhance the shopping experience, enabling users to manage their accounts, track orders, and interact with the platform's features seamlessly and Implemented advanced filtering functionalities",
-    },
-    {
-      video1: "/projects/screen16.mp4",
-      title: "XpresFood Store ",
-      description:
-        "Developed a dynamic and user-friendly online store using the Next.js framework. The store features advanced filtering options that allow customers to easily search and sort products based on various criteria such as category, price, and size. This enhances the shopping experience by making it straightforward to find desired items. The platform also supports smooth navigation and a responsive design, ensuring accessibility and usability across all devices.",
-    },
-  ];
+  const [contentRef, contentInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
 
   return (
     <div
       id="projects"
-      className="flex flex-col px-10 lg:px-20 text-white gap-10 lg:gap-20 py-8  items-center justify-center text-center"
+      className="flex flex-col text-white gap-10 lg:gap-20 py-12 px-6 lg:px-20 items-center justify-center min-h-screen"
     >
-      <motion.p
-        ref={ref1}
+      <motion.h2
+        ref={titleRef}
         initial="hidden"
-        animate={inView1 ? "visible" : "hidden"}
-        variants={variants}
+        animate={titleInView ? "visible" : "hidden"}
+        variants={fadeInVariants}
         transition={{ ease: "easeInOut", duration: 0.5 }}
-        className="font-extrabold text-4xl uppercase shadow-md"
+        className="font-extrabold text-4xl lg:text-5xl uppercase bg-gradient-to-r from-[#9A33FF] to-[#FF8660] text-transparent bg-clip-text text-center"
       >
         Projects
-      </motion.p>
+      </motion.h2>
 
-      <div className="flex flex-col lg:flex-row gap-10 ">
-        {cards2.map((card, index) => (
-          <div key={index}>
-            <Card
-              video1={card.video1}
-              title={card.title}
-              description={card.description}
-            />
+      <motion.div
+        ref={contentRef}
+        initial="hidden"
+        animate={contentInView ? "visible" : "hidden"}
+        variants={fadeInVariants}
+        transition={{ ease: "easeInOut", duration: 0.5 }}
+        className="flex flex-col items-center gap-8 max-w-2xl text-center"
+      >
+        <motion.div
+          variants={pulseVariants}
+          initial="initial"
+          animate="animate"
+          className="relative"
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-[#9A33FF] to-[#FF8660] rounded-full blur-2xl opacity-30" />
+          <div className="relative bg-gradient-to-r from-[#9A33FF] to-[#FF8660] p-8 rounded-full">
+            <Wrench size={64} className="text-white" strokeWidth={2} />
           </div>
-        ))}
-      </div>
-      <div className="flex flex-col lg:flex-row gap-10 ">
-        {cards1.map((card, index) => (
-          <div key={index}>
-            <Card
-              title={card.title}
-              description={card.description}
-              video1={card.video1}
-            />
-          </div>
-        ))}
-      </div>
+        </motion.div>
+
+        <div className="flex flex-col gap-4">
+          <h3 className="text-2xl lg:text-3xl font-bold">
+            🚧 Under Construction 🚧
+          </h3>
+          <p className="text-[#E1E1E1] text-lg leading-relaxed">
+            I'm currently working on some exciting projects to showcase here.
+            Check back soon to see my latest work in action!
+          </p>
+        </div>
+        <StatusBadge
+          content={
+            <>
+              {" "}
+              <Clock size={20} className="text-[#9A33FF]" />
+              <span className="font-semibold">Expected: Coming Soon</span>
+            </>
+          }
+        />
+      </motion.div>
+
+      <PreviewCard projects={COMING_SOON_PROJECTS} />
+
+      <motion.div
+        initial="hidden"
+        animate={contentInView ? "visible" : "hidden"}
+        variants={fadeInVariants}
+        transition={{ ease: "easeInOut", duration: 0.5, delay: 0.3 }}
+        className="flex flex-col items-center gap-4 mt-8"
+      >
+        <p className="text-[#E1E1E1] text-center">
+          In the meantime, feel free to check out my GitHub or get in touch!
+        </p>
+        <div className="flex gap-4">
+          <PrimaryButton
+            href="https://github.com/haifa17"
+            title="View GitHub"
+          />
+          <SecondaryButton href="#contact" title="Contact Me" />
+        </div>
+      </motion.div>
     </div>
   );
 };

@@ -8,7 +8,7 @@ import {
   slideInLeft,
   slideInRight,
   staggerContainer,
-} from "@/app/experience/variants";
+} from "@/lib/variants";
 
 export const ExperienceCard = ({
   experience,

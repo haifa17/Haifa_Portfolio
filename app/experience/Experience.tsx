@@ -3,7 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { EXPERIENCES } from "./constants";
-import { fadeInVariants } from "./variants";
+import { fadeInVariants } from "../../lib/variants";
 import { ExperienceCard } from "@/components/cards/ExperienceCard";
 import { ExpertiseSection } from "./ExpertiseSection";
 

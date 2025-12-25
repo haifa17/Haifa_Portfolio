@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { fadeInVariants, staggerContainer } from "@/app/experience/variants";
+import { fadeInVariants, staggerContainer } from "@/lib/variants";
 import { EXPERTISE_AREAS } from "./constants";
 import { Badge } from "@/components/badge/Badge";
 

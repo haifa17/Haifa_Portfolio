@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { fadeInVariants, slideInLeft, staggerContainer } from "./variants";
+import { fadeInVariants, slideInLeft, staggerContainer } from "@/lib/variants";
 import { CONTACT_INFO } from "./constants";
 import { ContactItem } from "./ContactItem";
 

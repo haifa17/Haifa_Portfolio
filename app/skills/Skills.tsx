@@ -1,92 +1,11 @@
 "use client";
-import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { Badge } from "@/components/badge/Badge";
-import { fadeInVariants } from "./variants";
 import { SKILL_CATEGORIES, TECH_ICONS } from "./constants";
-
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
-
-const SkillCategory = ({
-  title,
-  skills,
-  gridCols,
-  index,
-}: {
-  title: string;
-  skills: string[];
-  gridCols: string;
-  index: number;
-}) => {
-  const [titleRef, titleInView] = useInView({
-    triggerOnce: true,
-    threshold: 0.5,
-  });
-
-  const [skillsRef, skillsInView] = useInView({
-    triggerOnce: true,
-    threshold: 0.3,
-  });
-
-  return (
-    <div className="flex flex-col  text-white items-center gap-5 w-full">
-      <motion.p
-        ref={titleRef}
-        initial="hidden"
-        animate={titleInView ? "visible" : "hidden"}
-        variants={fadeInVariants}
-        transition={{ ease: "easeInOut", duration: 0.5, delay: index * 0.1 }}
-        className="font-semibold min-w-fit"
-      >
-        {title}:
-      </motion.p>
-      <motion.div
-        ref={skillsRef}
-        initial="hidden"
-        animate={skillsInView ? "visible" : "hidden"}
-        variants={staggerContainer}
-        className={`grid ${gridCols} grid-cols-2 items-center gap-4 w-full`}
-      >
-        {skills.map((skill, idx) => (
-          <Badge key={skill} skill={skill} index={idx} />
-        ))}
-      </motion.div>
-    </div>
-  );
-};
-
-const TechIcon = ({
-  icon,
-  index,
-}: {
-  icon: (typeof TECH_ICONS)[0];
-  index: number;
-}) => {
-  return (
-    <motion.div
-      variants={fadeInVariants}
-      transition={{ ease: "easeInOut", duration: 0.4, delay: index * 0.1 }}
-    >
-      <Image
-        src={icon.src}
-        width={80}
-        height={80}
-        alt={icon.alt}
-        className="cursor-pointer hover:scale-125 transition-all ease-in-out"
-      />
-    </motion.div>
-  );
-};
+import { SkillCategory } from "./SkillCategory";
+import { TechIcon } from "./TechIcon";
+import { fadeInVariants, staggerContainer } from "@/lib/variants";
 
 const Skills = () => {
   const [titleRef, titleInView] = useInView({

@@ -3,7 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { CONTACT_INFO } from "./constants";
 import Link from "next/link";
-import { fadeInVariants } from "./variants";
+import { fadeInVariants } from "@/lib/variants";
 
 export const ContactItem = ({
   item,

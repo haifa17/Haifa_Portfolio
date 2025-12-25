@@ -1,7 +1,13 @@
-import { fadeInVariants } from "@/app/skills/variants";
+import { fadeInVariants } from "@/lib/variants";
 import { motion } from "framer-motion";
 
-export const Badge = ({ skill: item, index }: { skill: string; index: number }) => (
+export const Badge = ({
+  skill: item,
+  index,
+}: {
+  skill: string;
+  index: number;
+}) => (
   <motion.div
     variants={fadeInVariants}
     transition={{ ease: "easeInOut", duration: 0.4, delay: index * 0.05 }}

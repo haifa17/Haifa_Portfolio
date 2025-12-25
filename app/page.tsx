@@ -1,8 +1,7 @@
 import Experience from "@/app/experience/Experience";
 import Hero from "@/app/hero/Hero";
-import Projects from "@/app/projects/Projects";
 import Skills from "@/app/skills/Skills";
-
+import Projects from "./projects/Projects";
 
 export default function Home() {
   return (
@@ -10,7 +9,7 @@ export default function Home() {
       <Hero />
       <Skills />
       <Experience />
-      {/* <Projects /> */}
+      <Projects />
     </div>
   );
 }

@@ -5,7 +5,11 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Download, Mail } from "lucide-react";
 import { SOCIAL_LINKS } from "./constants";
-import { fadeInVariants, scaleInVariants } from "./variants";
+import { fadeInVariants, scaleInVariants } from "@/lib/variants";
+import StatusBadge from "@/components/badge/StatusBadge";
+import Link from "next/link";
+import PrimaryButton from "@/components/buttons/PrimaryButton";
+import SecondaryButton from "@/components/buttons/SecondaryButton";
 
 const Hero = () => {
   const [imageRef, imageInView] = useInView({
@@ -108,12 +112,7 @@ const Hero = () => {
         >
           {["React.js", "Next.js", "TypeScript", "Tailwind CSS"].map(
             (skill, index) => (
-              <span
-                key={skill}
-                className="px-4 py-2 rounded-full bg-gradient-to-r from-[#9A33FF]/20 to-[#FF8660]/20 border border-[#9A33FF]/40 text-sm font-medium"
-              >
-                {skill}
-              </span>
+              <StatusBadge content={skill} />
             )
           )}
         </motion.div>
@@ -123,23 +122,25 @@ const Hero = () => {
           transition={{ ease: "easeInOut", duration: 0.5, delay: 0.5 }}
           className="flex flex-col sm:flex-row gap-4 "
         >
-          <a href="#contact" className="w-full sm:w-auto">
-            <button className="w-full sm:w-auto rounded-full px-6 py-3 bg-gradient-to-r from-[#9A33FF] to-[#FF8660] text-white font-semibold hover:shadow-lg hover:shadow-[#9A33FF]/50 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2">
-              <Mail size={18} />
-              Get In Touch
-            </button>
-          </a>
-
-          <a
-            href="/file/Haifa_Khiari_frontend_developer.pdf"
+          <SecondaryButton
+            href="#contact"
+            title={
+              <>
+                <Mail size={18} />
+                Get In Touch
+              </>
+            }
+          />
+          <PrimaryButton
             download
-            className="w-full sm:w-auto"
-          >
-            <button className="w-full sm:w-auto rounded-full px-6 py-3 border-2 border-[#9A33FF] text-white font-semibold hover:bg-gradient-to-r hover:from-[#9A33FF] hover:to-[#FF8660] hover:border-transparent transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2">
-              <Download size={18} />
-              Download CV
-            </button>
-          </a>
+            href="/file/Haifa_Khiari_frontend_developer.pdf"
+            title={
+              <>
+                <Download size={18} />
+                Download CV
+              </>
+            }
+          />
         </motion.div>
 
         <motion.div
@@ -150,7 +151,7 @@ const Hero = () => {
           {SOCIAL_LINKS.map((social) => {
             const Icon = social.icon;
             return (
-              <a
+              <Link
                 key={social.label}
                 href={social.href}
                 target="_blank"
@@ -160,7 +161,7 @@ const Hero = () => {
                 className="p-3 rounded-full border border-[#9A33FF]/40 hover:bg-gradient-to-r hover:from-[#9A33FF] hover:to-[#FF8660] hover:border-transparent transition-all duration-300 hover:scale-110"
               >
                 <Icon size={20} />
-              </a>
+              </Link>
             );
           })}
         </motion.div>
