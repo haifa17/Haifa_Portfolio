@@ -1,5 +1,14 @@
 "use client";
-import { Award, BriefcaseBusiness, FolderGit2, Home, Menu, Phone } from "lucide-react";
+import { AnimatedLanguageToggle } from "@/lib/CompactLanguageToggle";
+import {
+  Award,
+  BriefcaseBusiness,
+  FolderGit2,
+  Home,
+  Menu,
+  Phone,
+} from "lucide-react";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 import React, { useState } from "react";
 
@@ -8,6 +17,8 @@ const Navbar = () => {
   const handleClick = () => {
     setOpen(!open);
   };
+  const t = useTranslations("Navbar");
+
   return (
     <div className="bg-[#222222] flex justify-end lg:justify-center overflow-hidden  py-8  ">
       <div className="hidden text-white lg:flex items-center gap-10 mx-auto max-w-7xl">
@@ -15,34 +26,35 @@ const Navbar = () => {
           href="#home"
           className=" font-semibold hover:bg-gradient-to-r from-[#FF8660] to-[#9A33FF] hover:inline-block hover:text-transparent hover:bg-clip-text "
         >
-          Home
+          {t("home")}
         </Link>
         <Link
           href="#skills"
           className=" font-semibold hover:bg-gradient-to-r from-[#FF8660] to-[#9A33FF] hover:inline-block hover:text-transparent hover:bg-clip-text "
         >
-          Skills
+          {t("skills")}{" "}
         </Link>
         <Link
           href="#experience"
           className=" font-semibold hover:bg-gradient-to-r from-[#FF8660] to-[#9A33FF] hover:inline-block hover:text-transparent hover:bg-clip-text "
         >
-          Experience
+          {t("experience")}
         </Link>
         <Link
           href="#projects"
           className=" font-semibold hover:bg-gradient-to-r from-[#FF8660] to-[#9A33FF] hover:inline-block hover:text-transparent hover:bg-clip-text "
         >
-          Projects
+          {t("projects")}
         </Link>
 
         <Link
           href="#contact"
           className=" font-semibold hover:bg-gradient-to-r from-[#FF8660] to-[#9A33FF] hover:inline-block hover:text-transparent hover:bg-clip-text "
         >
-          Contact
+          {t("contact")}
         </Link>
       </div>
+      {/* <AnimatedLanguageToggle /> */}
       <div className="flex mr-10 lg:hidden  " onClick={handleClick}>
         <Menu size={30} className="text-white" />
         {open && (
@@ -53,32 +65,32 @@ const Navbar = () => {
                   href="#home"
                   className="flex items-center gap-2 curosr-pointer text-xl font-semibold hover:bg-gradient-to-r from-[#FF8660] to-[#9A33FF] hover:inline-block hover:text-transparent hover:bg-clip-text"
                 >
-                  <Home size={20} /> Home
+                  <Home size={20} /> {t("home")}
                 </Link>
                 <Link
                   href="#skills"
                   className=" flex items-center gap-2  text-xl curosr-pointer font-semibold hover:bg-gradient-to-r from-[#FF8660] to-[#9A33FF] hover:inline-block hover:text-transparent hover:bg-clip-text "
                 >
-                  <Award size={20} /> Skills
+                  <Award size={20} /> {t("skills")}
                 </Link>
                 <Link
                   href="#experience"
                   className=" flex items-center gap-2  text-xl curosr-pointer font-semibold hover:bg-gradient-to-r from-[#FF8660] to-[#9A33FF] hover:inline-block hover:text-transparent hover:bg-clip-text "
                 >
-                 <BriefcaseBusiness size={20} /> Experience
+                  <BriefcaseBusiness size={20} /> {t("experience")}
                 </Link>
                 <Link
                   href="#projects"
                   className="flex items-center gap-2 text-xl curosr-pointer  font-semibold hover:bg-gradient-to-r from-[#FF8660] to-[#9A33FF] hover:inline-block hover:text-transparent hover:bg-clip-text "
                 >
-                  <FolderGit2 size={20} /> Projects
+                  <FolderGit2 size={20} /> {t("projects")}
                 </Link>
 
                 <Link
                   href="#contact"
                   className=" flex items-center gap-2  text-xl curosr-pointer font-semibold hover:bg-gradient-to-r from-[#FF8660] to-[#9A33FF] hover:inline-block hover:text-transparent hover:bg-clip-text "
                 >
-                  <Phone size={20} /> Contact
+                  <Phone size={20} /> {t("contact")}
                 </Link>
               </div>
             </div>

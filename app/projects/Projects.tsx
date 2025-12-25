@@ -62,8 +62,8 @@ const Projects = () => {
             🚧 Under Construction 🚧
           </h3>
           <p className="text-[#E1E1E1] text-lg leading-relaxed">
-            I'm currently working on some exciting projects to showcase here.
-            Check back soon to see my latest work in action!
+            I&apos;m currently working on some exciting projects to showcase
+            here. Check back soon to see my latest work in action!
           </p>
         </div>
         <StatusBadge

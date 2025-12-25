@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { EXPERIENCES } from "@/app/experience/constants";
 import { useInView } from "react-intersection-observer";
 import {
   fadeInVariants,
@@ -9,6 +8,7 @@ import {
   slideInRight,
   staggerContainer,
 } from "@/lib/variants";
+import { EXPERIENCES } from "@/app/experience/constants";
 
 export const ExperienceCard = ({
   experience,

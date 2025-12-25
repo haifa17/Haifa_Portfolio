@@ -1,0 +1,9 @@
+{
+  "Navbar": {
+    "home": "Accueil",
+    "skills": "Compétences",
+    "projects": "Projets",
+    "experience": "Expérience",
+    "contact": "Contact"
+  }
+}

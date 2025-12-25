@@ -1,15 +1,31 @@
-import Experience from "@/app/experience/Experience";
-import Hero from "@/app/hero/Hero";
-import Skills from "@/app/skills/Skills";
 import Projects from "./projects/Projects";
+import ScrollSection from "@/lib/ScrollSection";
+import Skills from "./skills/Skills";
+import Hero from "./hero/Hero";
+import Experience from "./experience/Experience";
 
 export default function Home() {
   return (
-    <div className="mx-auto max-w-7xl flex flex-col gap-10 lg:gap-20 items-center justify-center py-10 overflow-hidden ">
-      <Hero />
-      <Skills />
-      <Experience />
-      <Projects />
+    <div className="mx-auto max-w-7xl flex flex-col gap-10 lg:gap-20 items-center justify-center overflow-hidden ">
+      <ScrollSection nextId="skills">
+        <Hero />
+      </ScrollSection>
+
+      <ScrollSection nextId="experience">
+        <div id="skills">
+          <Skills />
+        </div>
+      </ScrollSection>
+
+      <ScrollSection nextId="projects">
+        <div id="experience">
+          <Experience />
+        </div>
+      </ScrollSection>
+
+      <section id="projects" className="min-h-screen">
+        <Projects />
+      </section>
     </div>
   );
 }

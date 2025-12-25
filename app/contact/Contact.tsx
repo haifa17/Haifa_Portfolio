@@ -68,9 +68,9 @@ const Contact = () => {
         className="text-[#E1E1E1] text-center text-lg max-w-3xl mx-auto leading-relaxed"
       >
         Frontend Developer with 2+ years of experience building
-        production-ready, high-performance web applications. I'm always excited
-        to discuss new opportunities, collaborate on interesting projects, or
-        just connect with fellow developers.
+        production-ready, high-performance web applications. I &apos;m always
+        excited to discuss new opportunities, collaborate on interesting
+        projects, or just connect with fellow developers.
       </motion.p>
 
       {/* Form and Contact Info */}

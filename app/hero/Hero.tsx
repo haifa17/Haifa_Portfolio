@@ -73,7 +73,7 @@ const Hero = () => {
             Hi there! 👋
           </p>
           <h1 className="text-3xl lg:text-5xl font-extrabold">
-            I'm{" "}
+            I&apos;m{" "}
             <span className="gradient-color text-transparent bg-clip-text">
               Haifa Khiari
             </span>
@@ -112,7 +112,7 @@ const Hero = () => {
         >
           {["React.js", "Next.js", "TypeScript", "Tailwind CSS"].map(
             (skill, index) => (
-              <StatusBadge content={skill} />
+              <StatusBadge key={index} content={skill} />
             )
           )}
         </motion.div>

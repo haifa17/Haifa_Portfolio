@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
-import Contact from "@/app/contact/Contact";
+import { NextIntlClientProvider } from "next-intl";
+import Contact from "./contact/Contact";
 
 export const metadata: Metadata = {
   title: "Khiari Haifa",
@@ -16,9 +17,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className=" bg-black">
-        <Navbar />
-        {children}
-        <Contact />
+        <NextIntlClientProvider>
+          <Navbar />
+          {children}
+          <Contact />
+        </NextIntlClientProvider>
       </body>
     </html>
   );
