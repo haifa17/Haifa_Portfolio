@@ -9,8 +9,12 @@ import StatusBadge from "@/components/badge/StatusBadge";
 import PreviewCard from "@/components/cards/PreviewCard";
 import SecondaryButton from "@/components/buttons/SecondaryButton";
 import MainButton from "@/components/buttons/MainButton";
+import { useTranslations } from "next-intl";
 
 const Projects = () => {
+  const t = useTranslations("Projects");
+  const y = useTranslations("Buttons");
+
   const [titleRef, titleInView] = useInView({
     triggerOnce: true,
     threshold: 0.5,
@@ -34,7 +38,7 @@ const Projects = () => {
         transition={{ ease: "easeInOut", duration: 0.5 }}
         className="font-extrabold text-4xl lg:text-5xl uppercase bg-gradient-to-r from-[#9A33FF] to-[#FF8660] text-transparent bg-clip-text text-center"
       >
-        Projects
+        {t("title")}
       </motion.h2>
 
       <motion.div
@@ -59,19 +63,16 @@ const Projects = () => {
 
         <div className="flex flex-col gap-4">
           <h3 className="text-2xl lg:text-3xl font-bold">
-            🚧 Under Construction 🚧
+            🚧 {t("construction")} 🚧
           </h3>
-          <p className="text-[#E1E1E1] text-lg leading-relaxed">
-            I&apos;m currently working on some exciting projects to showcase
-            here. Check back soon to see my latest work in action!
-          </p>
+          <p className="text-[#E1E1E1] text-lg leading-relaxed">{t("body")}</p>
         </div>
         <StatusBadge
           content={
             <>
               {" "}
               <Clock size={20} className="text-[#9A33FF]" />
-              <span className="font-semibold">Expected: Coming Soon</span>
+              <span className="font-semibold"> {t("expected")}</span>
             </>
           }
         />
@@ -86,13 +87,11 @@ const Projects = () => {
         transition={{ ease: "easeInOut", duration: 0.5, delay: 0.3 }}
         className="flex flex-col items-center gap-4 mt-8"
       >
-        <p className="text-[#E1E1E1] text-center">
-          In the meantime, feel free to check out my GitHub or get in touch!
-        </p>
+        <p className="text-[#E1E1E1] text-center">{t("desc")}</p>
         <div className="flex gap-4">
           <SecondaryButton
             href="https://github.com/haifa17"
-            title="View GitHub"
+            title={y("github")}
           />
           <MainButton href="#contact" title="Contact Me" />
         </div>

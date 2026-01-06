@@ -1,9 +1,91 @@
 {
   "Navbar": {
     "home": "Home",
-    "skills":"Skills",
-    "projects":"Projects",
-    "experience":"Experience",
-    "contact":"Contact"
+    "skills": "Skills",
+    "projects": "Projects",
+    "experience": "Experience",
+    "contact": "Contact"
+  },
+  "Buttons": {
+    "touch": "Get In Touch",
+    "download": "Download CV",
+    "github": "View GitHub",
+    "contact": "Contact Me"
+  },
+  "Hero": {
+    "hi": "Hi there!",
+    "iam": "I'm ",
+    "job": "Frontend Developer",
+    "specialite": "React.js & Next.js Specialist",
+    "build": "I specialize in building",
+    "high-performance": "high-performance",
+    "web-app": "scalable web applications",
+    "desc": "with a focus on exceptional user experiences. From e-commerce platforms to interactive dashboards, I bring ideas to life with clean code and modern technologies.",
+    "experience": "2+ Years Experience"
+  },
+  "Skills": {
+    "title": "SKILLS",
+    "performance": "Performance & Architecture",
+    "state": "State Management",
+    "auth": "Authentication & Security",
+    "uiux": "UI/UX & Animation"
+  },
+  "Experience": {
+    "title": "Experience",
+    "areas_of_expertise": "Areas of Expertise",
+
+    "visioad": "VISIOAD",
+    "enova": "ENOVA ROBOTICS",
+
+    "role_visioad": "Frontend Developer",
+    "role_enova": "Development Intern – End of Studies Project",
+
+    "period_visioad": "SEPTEMBER 2023 - PRESENT",
+    "period_enova": "FEBRUARY 2023 - MAY 2023",
+
+    "location_visioad": "SOUSSE, TUNISIA",
+    "location_enova": "TUNISIA",
+
+    "visioad_1": "Built and maintained production-level e-commerce platforms with full dashboard management systems",
+    "visioad_2": "Implemented secure authentication flows with role-based access control using NextAuth and Clerk",
+    "visioad_3": "Optimized application performance through SSR, SSG, and ISR strategies, improving load times by 40%",
+    "visioad_4": "Managed server state and caching using React Query, and global state with Zustand",
+    "visioad_5": "Developed interactive UI animations with Framer Motion and GSAP, increasing user engagement",
+    "visioad_6": "Integrated internationalization (i18n) using next-intl for multilingual applications",
+    "visioad_7": "Applied code splitting, React Suspense, and dynamic imports to optimize bundle sizes",
+    "visioad_8": "Collaborated with designers and developers via Git workflows and code reviews",
+
+    "enova_1": "Developed a web and desktop application for remote robot monitoring and diagnostics",
+    "enova_2": "Built a responsive frontend using React.js for real-time visualization and control",
+    "enova_3": "Implemented backend services with Node.js and Express for device communication",
+    "enova_4": "Integrated MySQL database to store diagnostic and monitoring data",
+    "enova_5": "Used MQTT protocol for efficient real-time data exchange with robots",
+
+    "features_1": "Features & Capabilities",
+    "features_2": "Development Practices",
+    "features_3": "Project Types",
+
+    "expertise": "Areas of Expertise",
+    "development_practices": "Development Practices",
+    "project_types": "Project Types"
+  },
+  "Projects": {
+    "title": "Projects",
+    "construction": "Under Construction",
+    "body": "I'm currently working on some exciting projects to showcase here. Check back soon to see my latest work in action!",
+    "expected": "Expected: Coming Soon",
+    "desc": " In the meantime, feel free to check out my GitHub or get in touch!",
+    "desc_1": "Full-stack e-commerce with Next.js, payments, and admin dashboard",
+    "desc_2": "Analytics dashboard with real-time data visualization",
+    "desc_3": "Interactive portfolio with 3D elements and animations"
+  },
+  "Contact": {
+    "title": "Get In Touch",
+    "body": "Frontend Developer with 2+ years of experience building production-ready, high-performance web applications. I'm always excited to discuss new opportunities, collaborate on interesting projects, or just connect with fellow developers.",
+    "subject": "Subject",
+    "send": "Send Message",
+    "discuss":"Let's discuss...",
+    "tell":"Tell me about your project or idea...",
+    "info":"Contact Information"
   }
 }

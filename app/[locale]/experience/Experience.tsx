@@ -6,12 +6,15 @@ import { EXPERIENCES } from "./constants";
 import { fadeInVariants } from "@/lib/variants";
 import { ExperienceCard } from "@/components/cards/ExperienceCard";
 import { ExpertiseSection } from "./ExpertiseSection";
+import { useTranslations } from "next-intl";
 
 const Experience = () => {
   const [titleRef, titleInView] = useInView({
     triggerOnce: true,
     threshold: 0.5,
   });
+
+  const t = useTranslations("Experience");
 
   return (
     <div
@@ -27,7 +30,7 @@ const Experience = () => {
         transition={{ ease: "easeInOut", duration: 0.5 }}
         className="font-extrabold text-4xl lg:text-5xl uppercase gradient-color text-transparent bg-clip-text"
       >
-        Experience
+        {t("title")}
       </motion.h2>
 
       {/* Experience Cards */}

@@ -6,8 +6,10 @@ import { SKILL_CATEGORIES, TECH_ICONS } from "./constants";
 import { SkillCategory } from "./SkillCategory";
 import { TechIcon } from "./TechIcon";
 import { fadeInVariants, staggerContainer } from "@/lib/variants";
+import { useTranslations } from "next-intl";
 
 const Skills = () => {
+  const t = useTranslations("Skills");
   const [titleRef, titleInView] = useInView({
     triggerOnce: true,
     threshold: 0.5,
@@ -29,9 +31,9 @@ const Skills = () => {
         animate={titleInView ? "visible" : "hidden"}
         variants={fadeInVariants}
         transition={{ ease: "easeInOut", duration: 0.5 }}
-        className="font-bold text-4xl text-center"
+        className="font-bold text-4xl text-center uppercase"
       >
-        SKILLS
+        {t("title")}
       </motion.h2>
       <motion.div
         ref={iconsRef}
@@ -48,8 +50,8 @@ const Skills = () => {
       <div className="flex flex-col gap-8 w-full max-w-6xl px-4">
         {SKILL_CATEGORIES.map((category, index) => (
           <SkillCategory
-            key={category.title}
-            title={category.title}
+            key={category.key}
+            title={t(category.key)}
             skills={category.skills}
             gridCols={category.gridCols}
             index={index}

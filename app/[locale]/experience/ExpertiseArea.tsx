@@ -5,6 +5,7 @@ import { useInView } from "react-intersection-observer";
 import { fadeInVariants, staggerContainer } from "@/lib/variants";
 import { EXPERTISE_AREAS } from "./constants";
 import { Badge } from "@/components/badge/Badge";
+import { useTranslations } from "next-intl";
 
 export const ExpertiseArea = ({
   area,
@@ -15,6 +16,7 @@ export const ExpertiseArea = ({
     triggerOnce: true,
     threshold: 0.2,
   });
+  const t = useTranslations("Experience");
 
   return (
     <div className="flex flex-col gap-4 lg:gap-6">
@@ -26,7 +28,7 @@ export const ExpertiseArea = ({
         transition={{ ease: "easeInOut", duration: 0.5 }}
         className="font-semibold text-lg min-w-fit text-white"
       >
-        {area.title}:
+        {t(area.key)}
       </motion.h4>
       <motion.div
         initial="hidden"

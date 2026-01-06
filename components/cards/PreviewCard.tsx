@@ -1,5 +1,5 @@
 import React from "react";
-import { COMING_SOON_PROJECTS } from "@/app/projects/constants";
+import { COMING_SOON_PROJECTS } from "@/app/[locale]/projects/constants";
 import { ProjectCard } from "./ProjectCard";
 
 const PreviewCard = ({

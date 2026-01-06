@@ -10,8 +10,12 @@ import StatusBadge from "@/components/badge/StatusBadge";
 import Link from "next/link";
 import SecondaryButton from "@/components/buttons/SecondaryButton";
 import MainButton from "@/components/buttons/MainButton";
+import { useTranslations } from "next-intl";
 
 const Hero = () => {
+  const t = useTranslations("Hero");
+  const y = useTranslations("Buttons");
+
   const [imageRef, imageInView] = useInView({
     triggerOnce: true,
     threshold: 0.3,
@@ -53,7 +57,7 @@ const Hero = () => {
             className="absolute -bottom-4 left-[30%] transform translate-x-1/2 gradient-primary px-6 py-3 rounded-full shadow-lg"
           >
             <p className="text-white font-bold text-sm lg:text-base whitespace-nowrap">
-              2+ Years Experience
+              {t("experience")}
             </p>
           </motion.div>
         </div>
@@ -70,10 +74,10 @@ const Hero = () => {
           transition={{ ease: "easeInOut", duration: 0.5, delay: 0.1 }}
         >
           <p className="text-lg lg:text-xl text-[#E1E1E1] font-medium mb-2">
-            Hi there! 👋
+            {t("hi")} 👋
           </p>
           <h1 className="text-3xl lg:text-5xl font-extrabold">
-            I&apos;m{" "}
+            {t("iam")} 
             <span className="gradient-color text-transparent bg-clip-text">
               Haifa Khiari
             </span>
@@ -84,10 +88,10 @@ const Hero = () => {
           transition={{ ease: "easeInOut", duration: 0.5, delay: 0.2 }}
           className="text-2xl lg:text-4xl font-bold"
         >
-          Frontend Developer
+          {t("job")}
           <br />
           <span className="text-xl lg:text-3xl bg-gradient-to-r from-[#5BADFF] to-[#1373D1] text-transparent bg-clip-text">
-            React.js & Next.js Specialist
+            {t("specialite")}
           </span>
         </motion.h2>
         <motion.p
@@ -95,14 +99,13 @@ const Hero = () => {
           transition={{ ease: "easeInOut", duration: 0.5, delay: 0.3 }}
           className="text-base lg:text-lg text-[#E1E1E1] leading-relaxed"
         >
-          I specialize in building{" "}
-          <span className="font-semibold text-white">high-performance</span>,{" "}
+          {t("build")}{" "}
           <span className="font-semibold text-white">
-            scalable web applications
-          </span>{" "}
-          with a focus on exceptional user experiences. From e-commerce
-          platforms to interactive dashboards, I bring ideas to life with clean
-          code and modern technologies.
+            {" "}
+            {t("high-performance")}
+          </span>
+          , <span className="font-semibold text-white">{t("web-app")}</span>{" "}
+          {t("desc")}
         </motion.p>
 
         <motion.div
@@ -127,7 +130,7 @@ const Hero = () => {
             title={
               <>
                 <Mail size={18} />
-                Get In Touch
+                {y("touch")}
               </>
             }
           />
@@ -137,7 +140,7 @@ const Hero = () => {
             title={
               <>
                 <Download size={18} />
-                Download CV
+                {y("download")}
               </>
             }
           />

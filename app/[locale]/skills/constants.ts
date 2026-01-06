@@ -28,31 +28,25 @@ export const TECH_ICONS = [
     alt: "Tailwind CSS",
   },
 ];
-
 export const SKILL_CATEGORIES = [
- {
-    title: "Performance & Architecture",
+  {
+    key: "performance", 
     skills: ["SSR", "SSG", "ISR", "Code Splitting", "React Suspense", "Dynamic Imports", "Image Optimization", "Internationalization (i18n)"],
-    gridCols: "lg:grid-cols-4"
+    gridCols: "lg:grid-cols-4",
   },
   {
-    title: "State Management",
+    key: "state",
     skills: ["Zustand", "React Query", "RESTful APIs"],
     gridCols: "lg:grid-cols-3",
   },
   {
-    title: "Authentication & Security",
+    key: "auth",
     skills: ["NextAuth", "Clerk", "Role-Based Access Control"],
     gridCols: "lg:grid-cols-3",
   },
   {
-    title: "UI/UX & Animation",
-    skills: [
-      "Framer Motion",
-      "GSAP",
-      "Responsive Design",
-      "UI/UX Implementation",
-    ],
+    key: "uiux",
+    skills: ["Framer Motion", "GSAP", "Responsive Design", "UI/UX Implementation"],
     gridCols: "lg:grid-cols-4",
   },
 ];

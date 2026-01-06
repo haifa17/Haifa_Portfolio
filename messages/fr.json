@@ -5,5 +5,87 @@
     "projects": "Projets",
     "experience": "Expérience",
     "contact": "Contact"
+  },
+  "Buttons": {
+    "touch": "Prendre contact",
+    "download": "Télécharger le CV",
+    "github": "Voir GitHub",
+    "contact": "Contactez-moi"
+  },
+  "Hero": {
+    "hi": "Bonjour !",
+    "iam": "je suis ",
+    "job": "Développeur Frontend",
+    "specialite": "Spécialiste React.js & Next.js",
+    "build": "Je me spécialise dans la création de",
+    "high-performance": "applications web performantes",
+    "web-app": "et évolutives",
+    "desc": "en mettant l'accent sur des expériences utilisateur exceptionnelles. Des plateformes e-commerce aux tableaux de bord interactifs, je donne vie aux idées avec un code propre et des technologies modernes.",
+    "experience": "Plus de 2 ans d'expérience"
+  },
+  "Skills": {
+    "title": "COMPÉTENCES",
+    "performance": "Performance et Architecture",
+    "state": "Gestion d'État",
+    "auth": "Authentification et Sécurité",
+    "uiux": "UI/UX et Animation"
+  },
+  "Experience": {
+    "title": "Expérience",
+    "areas_of_expertise": "Domaines d'Expertise",
+
+    "visioad": "VISIOAD",
+    "enova": "ENOVA ROBOTICS",
+
+    "role_visioad": "Développeur Frontend",
+    "role_enova": "Stagiaire en Développement – Projet de Fin d'Études",
+
+    "period_visioad": "SEPTEMBRE 2023 - PRÉSENT",
+    "period_enova": "FÉVRIER 2023 - MAI 2023",
+
+    "location_visioad": "SOUSSE, TUNISIE",
+    "location_enova": "TUNISIE",
+
+    "visioad_1": "Création et maintenance de plateformes e-commerce de production avec systèmes complets de gestion de tableau de bord",
+    "visioad_2": "Mise en œuvre de flux d'authentification sécurisés avec contrôle d'accès basé sur les rôles utilisant NextAuth et Clerk",
+    "visioad_3": "Optimisation des performances de l'application via SSR, SSG et ISR, améliorant les temps de chargement de 40%",
+    "visioad_4": "Gestion de l'état du serveur et du caching avec React Query, et état global avec Zustand",
+    "visioad_5": "Développement d'animations UI interactives avec Framer Motion et GSAP, augmentant l'engagement utilisateur",
+    "visioad_6": "Intégration de l'internationalisation (i18n) avec next-intl pour des applications multilingues",
+    "visioad_7": "Application du code splitting, React Suspense et des imports dynamiques pour optimiser la taille des bundles",
+    "visioad_8": "Collaboration avec les designers et développeurs via Git workflows et code reviews",
+
+    "enova_1": "Développement d'une application web et desktop pour la surveillance et le diagnostic à distance de robots",
+    "enova_2": "Création d'un frontend réactif avec React.js pour la visualisation et le contrôle en temps réel",
+    "enova_3": "Mise en place de services backend avec Node.js et Express pour la communication avec les appareils",
+    "enova_4": "Intégration d'une base de données MySQL pour stocker les données de diagnostic et de surveillance",
+    "enova_5": "Utilisation du protocole MQTT pour un échange de données en temps réel efficace avec les robots",
+
+    "features_1": "Fonctionnalités & Capacités",
+    "features_2": "Pratiques de Développement",
+    "features_3": "Types de Projets",
+
+    "expertise": "Domaines d'Expertise",
+    "development_practices": "Pratiques de Développement",
+    "project_types": "Types de Projets"
+  },
+  "Projects": {
+    "title": "Projets",
+    "construction": "En Construction",
+    "body": "Je travaille actuellement sur des projets passionnants à présenter ici. Revenez bientôt pour découvrir mes dernières réalisations en action !",
+    "expected": "Prévu : Bientôt disponible",
+    "desc": "En attendant, n'hésitez pas à consulter mon GitHub ou à me contacter !",
+    "desc_1": "E-commerce full-stack avec Next.js, paiements et tableau de bord administrateur",
+    "desc_2": "Tableau de bord analytique avec visualisation des données en temps réel",
+    "desc_3": "Portfolio interactif avec éléments 3D et animations"
+  },
+  "Contact": {
+    "title": "Prenez Contact",
+    "body": "Développeur Frontend avec plus de 2 ans d'expérience dans la création d'applications web performantes et prêtes pour la production. Je suis toujours enthousiaste à l'idée de discuter de nouvelles opportunités, de collaborer sur des projets intéressants ou simplement de connecter avec d'autres développeurs.",
+    "subject": "Sujet",
+    "send": "Envoyer Message",
+    "discuss": "Discutons...",
+    "tell": "Parlez-moi de votre projet ou idée...",
+    "info": "Informations de Contact"
   }
 }

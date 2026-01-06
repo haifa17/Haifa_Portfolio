@@ -8,7 +8,8 @@ import {
   slideInRight,
   staggerContainer,
 } from "@/lib/variants";
-import { EXPERIENCES } from "@/app/experience/constants";
+import { EXPERIENCES } from "@/app/[locale]/experience/constants";
+import { useTranslations } from "next-intl";
 
 export const ExperienceCard = ({
   experience,
@@ -17,6 +18,8 @@ export const ExperienceCard = ({
   experience: (typeof EXPERIENCES)[0];
   index: number;
 }) => {
+  const t = useTranslations("Experience");
+
   const [headerRef, headerInView] = useInView({
     triggerOnce: true,
     threshold: 0.3,
@@ -50,7 +53,7 @@ export const ExperienceCard = ({
             <span className="gradient-primary text-transparent bg-clip-text">
               {experience.company}
             </span>
-            <span className="text-white"> / {experience.role}</span>
+            <span className="text-white"> / {t(experience.roleKey)}</span>
           </h3>
         </motion.div>
 
@@ -59,8 +62,8 @@ export const ExperienceCard = ({
           transition={{ ease: "easeInOut", duration: 0.5 }}
           className="text-[#E1E1E1] text-sm lg:text-base"
         >
-          <span className="font-semibold">{experience.period}</span>,{" "}
-          {experience.location}
+          <span className="font-semibold">{t(experience.periodKey)}</span>,{" "}
+          {t(experience.locationKey)}
         </motion.p>
       </motion.div>
 
@@ -80,7 +83,7 @@ export const ExperienceCard = ({
             className="flex gap-3 items-start"
           >
             <span className="text-[#9A33FF] mt-1.5 min-w-[8px]">▹</span>
-            <span className="leading-relaxed">{highlight}</span>
+            <span className="leading-relaxed">{t(highlight.key)}</span>
           </motion.li>
         ))}
       </motion.ul>

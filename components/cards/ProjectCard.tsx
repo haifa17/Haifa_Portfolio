@@ -4,7 +4,8 @@ import { fadeInVariants } from "@/lib/variants";
 import React from "react";
 import { useInView } from "react-intersection-observer";
 import StatusBadge from "../badge/StatusBadge";
-import { COMING_SOON_PROJECTS } from "@/app/projects/constants";
+import { COMING_SOON_PROJECTS } from "@/app/[locale]/projects/constants";
+import { useTranslations } from "next-intl";
 type Project = (typeof COMING_SOON_PROJECTS)[number]; // single project type
 
 export const ProjectCard = ({
@@ -13,7 +14,9 @@ export const ProjectCard = ({
 }: {
   project: Project;
   index: number;
-}) => {
+  }) => {
+    const t = useTranslations("Projects");
+  
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.2,
@@ -45,7 +48,7 @@ export const ProjectCard = ({
         {/* Title & Description */}
         <div className="flex flex-col gap-2">
           <h4 className="font-bold text-lg text-white">{project.title}</h4>
-          <p className="text-sm text-[#E1E1E1]/80">{project.description}</p>
+          <p className="text-sm text-[#E1E1E1]/80">{t(project.descriptionKey)}</p>
         </div>
 
         {/* Status */}
