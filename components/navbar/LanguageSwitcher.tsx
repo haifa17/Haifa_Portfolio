@@ -13,17 +13,17 @@ interface LanguageSwitcherProps {
 }
 
 export const LanguageSwitcher = ({ isOpen, toggle, close, locale, languages, switchLocalePath }:LanguageSwitcherProps) => (
-  <div className="relative lg:flex justify-end px-8">
+  <div className="relative lg:flex justify-end lg:px-8 px-4">
     <button
       onClick={toggle}
-      className="flex items-center gap-2 text-white hover:text-[#FF8660] transition"
+      className="flex items-center gap-2 text-white  dark:hover:text-[#FF8660] transition"
       aria-label="Switch language"
     >
       <Globe size={20} />
     </button>
     
     {isOpen && (
-      <div className="absolute right-9 mt-6 w-24 rounded-xl bg-[#1a1a1a] shadow-lg border border-white/10 z-50">
+      <div className="absolute right-9 lg:mt-6 w-24 rounded-xl bg-white dark:bg-[#1a1a1a] shadow-lg border border-white/10 z-50">
         {languages.map(({ code, flag }) => (
           <Link
             key={code}

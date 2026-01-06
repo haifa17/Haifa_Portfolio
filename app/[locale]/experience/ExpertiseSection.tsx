@@ -22,7 +22,7 @@ export const ExpertiseSection = () => {
         animate={titleInView ? "visible" : "hidden"}
         variants={fadeInVariants}
         transition={{ ease: "easeInOut", duration: 0.5 }}
-        className="font-bold text-3xl lg:text-4xl uppercase text-center text-[#9A33FF]"
+        className="font-bold text-4xl lg:text-5xl uppercase text-center text-[#9A33FF]"
       >
         {t("expertise")}
       </motion.h3>

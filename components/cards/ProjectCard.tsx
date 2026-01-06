@@ -47,8 +47,8 @@ export const ProjectCard = ({
 
         {/* Title & Description */}
         <div className="flex flex-col gap-2">
-          <h4 className="font-bold text-lg text-white">{project.title}</h4>
-          <p className="text-sm text-[#E1E1E1]/80">{t(project.descriptionKey)}</p>
+          <h4 className="font-bold text-lg dark:text-white">{project.title}</h4>
+          <p className="text-sm dark:text-[#E1E1E1]/80">{t(project.descriptionKey)}</p>
         </div>
 
         {/* Status */}

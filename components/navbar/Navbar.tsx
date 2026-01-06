@@ -8,6 +8,7 @@ import { LANGUAGES, NAV_LINKS } from "./constants";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { MobileNav } from "./MobileNav";
 import { MobileMenuToggle } from "./MobileMenuToggle";
+import { ModeToggle } from "@/components/navbar/ModeToggle";
 
 const Navbar = () => {
   const locale = useLocale();
@@ -27,19 +28,20 @@ const Navbar = () => {
   const closeLangMenu = () => setIsLangMenuOpen(false);
 
   return (
-    <nav className="bg-[#222222] flex justify-end lg:justify-center py-8 relative z-50">
+    <nav className="dark:bg-[#222222] bg-[#583e72] flex justify-end lg:justify-center py-8 relative z-50">
       <DesktopNav links={NAV_LINKS} t={t} />
-
-      <LanguageSwitcher
-        isOpen={isLangMenuOpen}
-        toggle={toggleLangMenu}
-        close={closeLangMenu}
-        locale={locale}
-        languages={LANGUAGES}
-        switchLocalePath={switchLocalePath}
-      />
-
-      <MobileMenuToggle toogle={toggleMobileMenu} />
+      <div className="lg:px-8 px-4 flex items-center">
+        <LanguageSwitcher
+          isOpen={isLangMenuOpen}
+          toggle={toggleLangMenu}
+          close={closeLangMenu}
+          locale={locale}
+          languages={LANGUAGES}
+          switchLocalePath={switchLocalePath}
+        />
+        <ModeToggle />
+      </div>
+      <MobileMenuToggle isOpen={isMobileMenuOpen} toggle={toggleMobileMenu} />
 
       {isMobileMenuOpen && <MobileNav links={NAV_LINKS} t={t} />}
     </nav>

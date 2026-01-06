@@ -47,7 +47,7 @@ const Contact = () => {
   return (
     <div
       id="contact"
-      className="flex flex-col text-white gap-10 lg:gap-20 py-12 px-6 lg:px-20 bg-[#222222]"
+      className="flex flex-col text-black dark:text-white gap-10 lg:gap-20 py-12 px-6 lg:px-20 bg-[#f7f1ef] dark:bg-[#222222]"
     >
       {/* Title */}
       <motion.h2
@@ -68,7 +68,7 @@ const Contact = () => {
         animate={descInView ? "visible" : "hidden"}
         variants={fadeInVariants}
         transition={{ ease: "easeInOut", duration: 0.5 }}
-        className="text-[#E1E1E1] text-center text-lg max-w-3xl mx-auto leading-relaxed"
+        className="text-black dark:text-[#E1E1E1] text-center text-lg max-w-3xl mx-auto leading-relaxed"
       >
         {t("body")}
       </motion.p>
@@ -87,7 +87,7 @@ const Contact = () => {
           className="flex flex-col gap-6 w-full lg:w-1/2"
         >
           <div className="flex flex-col gap-2">
-            <label htmlFor="subject" className="font-semibold text-white">
+            <label htmlFor="subject" className="font-semibold  dark:text-white">
               {t("subject")}
             </label>
             <input
@@ -98,12 +98,12 @@ const Contact = () => {
               onChange={handleChange}
               placeholder={t("discuss")}
               required
-              className="rounded-lg bg-transparent border border-[#FF8660]/30 py-3 px-4 text-white placeholder:text-[#E1E1E1]/40 focus:border-[#FF8660] focus:outline-none transition-colors duration-300"
+              className="rounded-lg bg-transparent border border-[#FF8660]/30 py-3 px-4  dark:text-white dark:placeholder:text-[#E1E1E1]/40 focus:border-[#FF8660] focus:outline-none transition-colors duration-300"
             />
           </div>
 
           <div className="flex flex-col gap-2">
-            <label htmlFor="message" className="font-semibold text-white">
+            <label htmlFor="message" className="font-semibold  dark:text-white">
               Message
             </label>
             <textarea
@@ -114,7 +114,7 @@ const Contact = () => {
               placeholder={t("tell")}
               required
               rows={6}
-              className="rounded-lg bg-transparent border border-[#FF8660]/30 py-3 px-4 text-white placeholder:text-[#E1E1E1]/40 focus:border-[#FF8660] focus:outline-none transition-colors duration-300 resize-none"
+              className="rounded-lg bg-transparent border border-[#FF8660]/30 py-3 px-4  dark:text-white dark:placeholder:text-[#E1E1E1]/40 focus:border-[#FF8660] focus:outline-none transition-colors duration-300 resize-none"
             />
           </div>
 
@@ -134,7 +134,7 @@ const Contact = () => {
           variants={staggerContainer}
           className="flex flex-col gap-4 w-full lg:w-1/2"
         >
-          <h3 className="font-bold text-xl mb-2 text-white">
+          <h3 className="font-bold text-xl mb-2  dark:text-white">
             {t("info")}
           </h3>
           {CONTACT_INFO.map((item, index) => (

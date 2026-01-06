@@ -29,7 +29,7 @@ const Hero = () => {
   return (
     <div
       id="home"
-      className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16  px-6 lg:px-20 items-center text-white min-h-[calc(100vh-80px)]"
+      className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 mt-5 lg:mt-0 px-6 lg:px-20 items-center dark:text-white min-h-[calc(100vh-80px)]"
     >
       <motion.div
         ref={imageRef}
@@ -54,9 +54,9 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.5 }}
-            className="absolute -bottom-4 left-[30%] transform translate-x-1/2 gradient-primary px-6 py-3 rounded-full shadow-lg"
+            className="absolute -bottom-4 left-[20%] lg:left-[30%] transform translate-x-1/2 gradient-primary px-6 py-3 rounded-full shadow-lg"
           >
-            <p className="text-white font-bold text-sm lg:text-base whitespace-nowrap">
+            <p className="dark:text-white font-bold text-sm lg:text-base whitespace-nowrap">
               {t("experience")}
             </p>
           </motion.div>
@@ -73,7 +73,7 @@ const Hero = () => {
           variants={fadeInVariants}
           transition={{ ease: "easeInOut", duration: 0.5, delay: 0.1 }}
         >
-          <p className="text-lg lg:text-xl text-[#E1E1E1] font-medium mb-2">
+          <p className="text-lg lg:text-xl dark:text-[#E1E1E1] font-medium mb-2">
             {t("hi")} 👋
           </p>
           <h1 className="text-3xl lg:text-5xl font-extrabold">
@@ -97,21 +97,21 @@ const Hero = () => {
         <motion.p
           variants={fadeInVariants}
           transition={{ ease: "easeInOut", duration: 0.5, delay: 0.3 }}
-          className="text-base lg:text-lg text-[#E1E1E1] leading-relaxed"
+          className="text-base lg:text-lg dark:text-[#E1E1E1] leading-relaxed"
         >
           {t("build")}{" "}
-          <span className="font-semibold text-white">
+          <span className="font-semibold dark:text-white">
             {" "}
             {t("high-performance")}
           </span>
-          , <span className="font-semibold text-white">{t("web-app")}</span>{" "}
+          , <span className="font-semibold dark:text-white">{t("web-app")}</span>{" "}
           {t("desc")}
         </motion.p>
 
         <motion.div
           variants={fadeInVariants}
           transition={{ ease: "easeInOut", duration: 0.5, delay: 0.4 }}
-          className="flex flex-wrap gap-3 text-white justify-center lg:justify-start"
+          className="flex flex-wrap gap-3 dark:text-white justify-center lg:justify-start"
         >
           {["React.js", "Next.js", "TypeScript", "Tailwind CSS"].map(
             (skill, index) => (

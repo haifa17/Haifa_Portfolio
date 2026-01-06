@@ -50,17 +50,17 @@ export const ExperienceCard = ({
           transition={{ ease: "easeInOut", duration: 0.5 }}
         >
           <h3 className="font-bold text-xl lg:text-2xl">
-            <span className="gradient-primary text-transparent bg-clip-text">
+            <span className="text-[#9A33FF] dark:gradient-primary dark:text-transparent dark:bg-clip-text">
               {experience.company}
             </span>
-            <span className="text-white"> / {t(experience.roleKey)}</span>
+            <span className="dark:text-white"> / {t(experience.roleKey)}</span>
           </h3>
         </motion.div>
 
         <motion.p
           variants={slideInRight}
           transition={{ ease: "easeInOut", duration: 0.5 }}
-          className="text-[#E1E1E1] text-sm lg:text-base"
+          className="dark:text-[#E1E1E1] text-sm lg:text-base"
         >
           <span className="font-semibold">{t(experience.periodKey)}</span>,{" "}
           {t(experience.locationKey)}
@@ -73,7 +73,7 @@ export const ExperienceCard = ({
         initial="hidden"
         animate={highlightsInView ? "visible" : "hidden"}
         variants={staggerContainer}
-        className="flex flex-col gap-3 text-[#E1E1E1]"
+        className="flex flex-col gap-3 dark:text-[#E1E1E1]"
       >
         {experience.highlights.map((highlight, idx) => (
           <motion.li

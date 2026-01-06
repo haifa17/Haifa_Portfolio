@@ -19,7 +19,7 @@ const Experience = () => {
   return (
     <div
       id="experience"
-      className="flex flex-col text-white gap-10 lg:gap-20 py-8 px-6 lg:px-20 items-center justify-center"
+      className="flex flex-col dark:text-white gap-10 lg:gap-20 py-8 px-6 lg:px-20 items-center justify-center"
     >
       {/* Section Title */}
       <motion.h2

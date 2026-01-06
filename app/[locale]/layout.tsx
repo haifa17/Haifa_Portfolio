@@ -6,6 +6,7 @@ import Contact from "./contact/Contact";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { locales } from "@/config";
+import { ThemeProvider } from "@/components/theme-provider.tsx";
 
 export const metadata: Metadata = {
   title: "Khiari Haifa",
@@ -24,12 +25,19 @@ export default async function RootLayout({
   }
   const messages = await getMessages({ locale: params.locale });
   return (
-    <html lang={params.locale}>
-      <body className=" bg-black">
+    <html lang={params.locale} suppressHydrationWarning>
+      <body className="bg-gradient-to-br from-[#9A33FF]/5 to-[#FF8660]/5 dark:bg-black">
         <NextIntlClientProvider messages={messages}>
-          <Navbar />
-          {children}
-          <Contact />
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <Navbar />
+            {children}
+            <Contact />
+          </ThemeProvider>
         </NextIntlClientProvider>
       </body>
     </html>

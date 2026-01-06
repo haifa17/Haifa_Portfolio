@@ -23,7 +23,7 @@ const Skills = () => {
   return (
     <div
       id="skills"
-      className="flex flex-col text-white gap-10 lg:gap-20 py-8 items-center justify-center"
+      className="flex flex-col dark:text-white gap-10 lg:gap-20 py-8 items-center justify-center"
     >
       <motion.h2
         ref={titleRef}
@@ -31,7 +31,7 @@ const Skills = () => {
         animate={titleInView ? "visible" : "hidden"}
         variants={fadeInVariants}
         transition={{ ease: "easeInOut", duration: 0.5 }}
-        className="font-bold text-4xl text-center uppercase"
+        className="font-bold text-4xl lg:text-5xl text-center uppercase"
       >
         {t("title")}
       </motion.h2>

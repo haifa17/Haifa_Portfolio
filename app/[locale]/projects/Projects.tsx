@@ -28,7 +28,7 @@ const Projects = () => {
   return (
     <div
       id="projects"
-      className="flex flex-col text-white gap-10 lg:gap-20 py-12 px-6 lg:px-20 items-center justify-center min-h-screen"
+      className="flex flex-col dark:text-white gap-10 lg:gap-20 py-12 px-6 lg:px-20 items-center justify-center min-h-screen"
     >
       <motion.h2
         ref={titleRef}
@@ -57,7 +57,7 @@ const Projects = () => {
         >
           <div className="absolute inset-0 gradient-primary rounded-full blur-2xl opacity-30" />
           <div className="relative gradient-primary p-8 rounded-full">
-            <Wrench size={64} className="text-white" strokeWidth={2} />
+            <Wrench size={64} className="dark:text-white" strokeWidth={2} />
           </div>
         </motion.div>
 
@@ -65,7 +65,7 @@ const Projects = () => {
           <h3 className="text-2xl lg:text-3xl font-bold">
             🚧 {t("construction")} 🚧
           </h3>
-          <p className="text-[#E1E1E1] text-lg leading-relaxed">{t("body")}</p>
+          <p className="dark:text-[#E1E1E1] text-lg leading-relaxed">{t("body")}</p>
         </div>
         <StatusBadge
           content={
@@ -87,7 +87,7 @@ const Projects = () => {
         transition={{ ease: "easeInOut", duration: 0.5, delay: 0.3 }}
         className="flex flex-col items-center gap-4 mt-8"
       >
-        <p className="text-[#E1E1E1] text-center">{t("desc")}</p>
+        <p className="dark:text-[#E1E1E1] text-center">{t("desc")}</p>
         <div className="flex gap-4">
           <SecondaryButton
             href="https://github.com/haifa17"
